@@ -30,6 +30,12 @@ public class IndexController {
         model.addAttribute("productosDB", productosDB);
         return "listar.html";
     }
+    
+    
+    @GetMapping("/nuevoProducto")
+    public String nuevoCliente(Producto producto){
+        return "modificarProducto";
+    }
 
     @PostMapping("/guardarProducto")
     public String guardarProducto(Producto producto, Model model) {

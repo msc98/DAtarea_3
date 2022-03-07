@@ -9,7 +9,9 @@
 </head>
 <body>
     <header th:replace="layout/plantilla :: menu"></header>
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <a th:href="@{/nuevoProducto}"><h2>Nuevo Producto</h2></a>
+    <br>
     <div th:if="${productosDB != null and !productosDB.empty}">
         <table border="1">
             <thead>
