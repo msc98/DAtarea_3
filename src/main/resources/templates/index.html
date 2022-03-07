@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <tittle>The Rumbling</tittle>
+    </head>
+    <body>
+        <div th:if="${productosDB != null and !productosDB.empty}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID PRODUCTO</th>
+                        <th>NOMBRE</th>
+                        <th>ESTADO</th>
+                        <th>DESCRIPCION</th>
+                        <th>PRECIO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${productosDB}">
+                        <td th:text="${item.ID_PRODUCTOS_ACESORIOS}"></td>
+                        <td th:text="${item.NOMBRE}"></td>
+                        <td th:text="${item.ESTADO}"></td>
+                        <td th:text="${item.DESCRIPCION}"></td>
+                        <td th:text="${item.PRECIO}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${productosDB == null or productosDB.empty}">No hay productos registrados</div>
+    </body>
+</html>
