@@ -2,6 +2,7 @@ package com.tarea_3.demo.controller;
 
 import com.tarea_3.demo.domain.Producto;
 import com.tarea_3.demo.service.ProductoService;
+import javax.swing.JOptionPane;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -68,5 +69,11 @@ public class IndexController {
     @GetMapping("/contacto")
     public String contacto(Producto producto) {
         return "contacto.html";
+    }
+    
+    @PostMapping("/guardarNuevo")
+    public String guardarNuevo(Producto producto) {
+        productoService.save(producto);
+        return "index.html";
     }
 }
