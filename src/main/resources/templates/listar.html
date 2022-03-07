@@ -9,6 +9,7 @@
 </head>
 <body>
     <header th:replace="layout/plantilla :: menu"></header>
+    <br><br><br><br><br><br><br><br><br>
     <div th:if="${productosDB != null and !productosDB.empty}">
         <table border="1">
             <thead>
@@ -18,6 +19,8 @@
                     <th>ESTADO</th>
                     <th>DESCRIPCION</th>
                     <th>PRECIO</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +30,8 @@
                     <td th:text="${item.ESTADO}"></td>
                     <td th:text="${item.DESCRIPCION}"></td>
                     <td th:text="${item.PRECIO}"></td>
+                    <td><a th:href="@{/modificarProducto/} + ${item.ID_PRODUCTOS_ACESORIOS}">Modificar</a></td>
+                    <td><a th:href="@{/eliminarProducto/} + ${item.ID_PRODUCTOS_ACESORIOS}">Eliminar</a></td>
                 </tr>
             </tbody>
         </table>

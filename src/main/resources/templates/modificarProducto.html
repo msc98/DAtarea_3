@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>The Rumbling</title>
+        <meta charset="UTF-8">
+        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css"/>
+    <tittle>The Rumbling</tittle>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: menu"></header>
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <form th:action="@{/guardarProducto}"
+              method="post"
+              th:object="${producto}">
+            <input type="hidden" name="ID_PRODUCTOS_ACESORIOS" th:field="*{ID_PRODUCTOS_ACESORIOS}"/>
+            <label for="NOMBRE">Nombre: </label>
+            <input type="text" name="NOMBRE" th:field="*{NOMBRE}"/>
+            <br>
+            <label for="ESTADO">Estado: </label>
+            <input type="text" name="ESTADO" th:field="*{ESTADO}"/>
+            <br>
+            <label for="DESCRIPCION">Descripcion: </label>
+            <input type="text" name="DESCRIPCION" th:field="*{DESCRIPCION}"/>
+            <br>
+            <label for="PRECIO">Precio: </label>
+            <input type="text" name="PRECIO" th:field="*{PRECIO}"/>
+            <br>
+            <input type="submit" name="Guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>

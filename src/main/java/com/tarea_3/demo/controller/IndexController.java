@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -22,15 +23,36 @@ public class IndexController {
     public String Inicio(Model model) {
         log.info("Ahora utilizando la arquitectura de MVC");
         
-        var productosDB = productoService.getProducto();
-        model.addAttribute("productosDB", productosDB);
-        
         return "index";
     }
     
     @GetMapping("/listar")
-    public String listar(Producto producto){
+    public String listar(Producto producto, Model model){
+        var productosDB = productoService.getProducto();
+        model.addAttribute("productosDB", productosDB);
         return "listar.html";
     }
     
+    @PostMapping ("/guardarProducto")
+    public String guardarProducto(Producto producto, Model model){
+        var productosDB = productoService.getProducto();
+        model.addAttribute("productosDB", productosDB);
+        productoService.save(producto);
+        return "listar.html";
+    }
+    
+    @GetMapping("/modificarProducto/{ID_PRODUCTOS_ACESORIOS}")
+    public String modificarProducto(Producto producto, Model model){
+        Producto respuesta = productoService.getProducto(producto);
+        model.addAttribute("Producto", respuesta);
+        return "modificarProducto";
+    }
+    
+    @GetMapping("/eliminarProducto/{ID_PRODUCTOS_ACESORIOS}")
+    public String eliminarProducto(Producto producto, Model model){
+        var productosDB = productoService.getProducto();
+        model.addAttribute("productosDB", productosDB);
+        productoService.delete(producto);
+        return "listar.html";
+    }
 }
