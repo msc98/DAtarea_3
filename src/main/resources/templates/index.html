@@ -4,9 +4,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <tittle>The Rumbling</tittle>
-    </head>
-    <body>
+        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css"/>
+    <tittle>The Rumbling</tittle>
+</head>
+<body>
+    <header th:replace="layout/plantilla :: menu"></header>
+    <div id="saludo">
+        <h2>Bienvenidos a la tienda <span style="color:#0D735F"><u>The Rumbling!</u></span></h2>
+        <h2>Acá encontrará todos los Electrónicos y Hardware que necesita!</h2>
+        <img th:src="@{/images/icono.jpg}" alt=""/>
+        <br>  
+        <br>
+        <br>
         <div th:if="${productosDB != null and !productosDB.empty}">
             <table border="1">
                 <thead>
@@ -30,5 +39,5 @@
             </table>
         </div>
         <div th:if="${productosDB == null or productosDB.empty}">No hay productos registrados</div>
-    </body>
+</body>
 </html>

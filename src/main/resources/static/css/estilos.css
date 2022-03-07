@@ -1,0 +1,50 @@
+.menu {
+    background-color: #636666;
+    position: fixed;
+    height: auto; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 10%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 50%;
+
+}
+
+.nav-link {
+    color:white;
+    text-decoration: none;
+}
+
+.titulo {
+    font-size: 200%;
+    color: #76D7C4;
+    padding: 1% 15%;
+}
+
+.nav-menu{
+    display: flex;
+    font-size: 150%;
+    list-style: none;
+}
+
+.nav-menu-item {
+    margin: 5% 10%;
+    width: max-content;
+}
+
+.nav-link:hover {
+    padding: 12px 1px;
+    background-color: #76D7C4;
+    transition: 0.1s;
+}
+
+#saludo {
+  padding-top: 15%;
+  text-align: center;
+    
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>The Rumbling</title>
+        <meta charset="UTF-8">    
+    </head>
+    <body>
+        <header th:fragment="menu" class="menu">
+            <nav class="nav">
+                <h1 class="titulo">The Rumbling</h1>
+                <ul class="nav-menu">   
+                    <li class="nav-menu-item"><a th:href="@{/}" class="nav-link">Inicio</a></li>
+                    <li class="nav-menu-item"><a th:href="@{/listar}" class="nav-link">Listar</a></li>
+                    <li class="nav-menu-item"><a th:href="@{/insertar}" class="nav-link">Insertar</a></li>
+                    <li class="nav-menu-item"><a th:href="@{/contacto.html}" class="nav-link">Contáctenos</a></li>
+                </ul>
+            </nav>
+        </header>   
+    </body>
+</html>
