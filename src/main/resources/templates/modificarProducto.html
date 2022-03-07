@@ -8,24 +8,38 @@
     </head>
     <body>
         <header th:replace="layout/plantilla :: menu"></header>
-        <br><br><br><br><br><br><br><br><br><br><br>
+       <div id="backgroundIn">
+        <h2 id="tituloProd">Ingrese los datos del nuevo producto que desea agregar</h2>
+        <br>
         <form th:action="@{/guardarProducto}"
               method="post"
-              th:object="${producto}">
-            <input type="hidden" name="ID_PRODUCTOS_ACESORIOS" th:field="*{ID_PRODUCTOS_ACESORIOS}"/>
-            <label for="NOMBRE">Nombre: </label>
-            <input type="text" name="NOMBRE" th:field="*{NOMBRE}"/>
+              th:object="${producto}"
+              class="form">
+
+
+            <input type="hidden" name="ID_PRODUCTOS_ACESORIOS" th:field="*{ID_PRODUCTOS_ACESORIOS}">
+
+            <label for="NOMBRE">Nombre: </label><br>
+            <input type="text" name="NOMBRE" th:field="*{NOMBRE}"> 
             <br>
-            <label for="ESTADO">Estado: </label>
-            <input type="text" name="ESTADO" th:field="*{ESTADO}"/>
             <br>
-            <label for="DESCRIPCION">Descripcion: </label>
-            <input type="text" name="DESCRIPCION" th:field="*{DESCRIPCION}"/>
+            <input type="radio" id="nuevo" name="ESTADO" value="Nuevo" th:field="*{ESTADO}">
+            <label for="nuevo">Nuevo</label>
+            <input type="radio" id="usado" name="ESTADO" value="Usado" th:field="*{ESTADO}">
+            <label for="usado">Usado</label>
             <br>
-            <label for="PRECIO">Precio: </label>
-            <input type="text" name="PRECIO" th:field="*{PRECIO}"/>
             <br>
-            <input type="submit" name="Guardar" value="Guardar"/>
+            <label for="DESCRIPCION">Descripción: </label><br>
+            <textarea name="DESCRIPCION" rows="3" cols="21" th:field="*{DESCRIPCION}"></textarea> 
+            <br>
+            <br>
+            <label for="PRECIO">Precio: </label><br>
+            <input type="text" name="PRECIO" th:field="*{PRECIO}"> 
+            <br>
+            <br>
+            <br>
+            <input type="submit" name="Guardar" value="Guardar" class="form-submit">
         </form>
+    </div>
     </body>
 </html>
