@@ -48,3 +48,46 @@
   text-align: center;
     
 }
+
+#contacto {
+    padding-left: 3%;
+    padding-top: 10%;
+}
+
+#frame1 {
+    margin-right: 3%;
+    background-color: #94b8b8;
+    padding: 1% 1%;
+    border-radius: 20px;
+}
+
+#frame2 {
+    margin-right: 3%;
+    background-color: #5c8a8a;
+    padding: 1% 1%;
+    border-radius: 20px;
+}
+
+.form-submit {
+    margin-left: 2%;
+}
+
+.form {
+    margin-left:5%;
+    padding-bottom: 1%;
+    color: white;
+}
+
+#tituloProd {
+    padding-top: 1%;
+    margin-top: 15%;
+    margin-left: 2%;
+    color: #66ccff;
+}
+
+#backgroundIn{
+    margin-right: 3%;
+    margin-left: 3%;
+    background-color: #334d4d;
+    border-radius: 20px;
+}

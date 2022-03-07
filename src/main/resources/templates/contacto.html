@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>The Rumbling</title>
+        <meta charset="UTF-8">
+        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css"/>
+    <tittle>The Rumbling</tittle>
+</head>
+<body>
+    <header th:replace="layout/plantilla :: menu"></header>
+    <div id="contacto">
+        <div id="frame1">
+            <h2>Información de contacto</h2>
+            <ul>
+
+                <li>
+
+                    <header>Correo electrónico: </header>
+                    <a href="mailto:therumbling@info.co.cr">therumbling@info.co.cr</a>
+                    <br>
+                    <br>
+                </li>
+
+                <li>
+                    <header>Facebook: </header>
+                    <a href="https://therumbling.facebook.com">The Rumbling</a>
+                    <br>
+                    <br>
+                </li>
+
+                <li>
+                    <header>WhatsApp: </header>
+                    <a href="https://therumbling.whatsapp.com">The Rumbling WhatsApp</a>  
+                </li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+        <div id="frame2">
+            <h2>Formulario de contacto</h2>
+            <form name="contactar" action="#">
+                <label>Nombre completo: </label>     
+                <input type="text" name="nombre" value=""/>
+                <br>
+                <label>Correo electrónico: </label>
+                <input type="email" name="email" placeholder="ejemplo@ejemplo.com">
+                <br>
+                <label>Teléfono: </label>
+                <input type="tel" name="tel" placeholder="xxxx-xxxx">
+                <br>
+                <br>
+                <label>Tema: </label><br>
+                <input type="radio" id="compras" name="tema" value="Compras realizadas">
+                <label for="compras">Compras realizadas</label><br>
+                <input type="radio" id="issues" name="tema" value="Inconvenientes con la página">
+                <label for="issues">Inconvenientes con la página</label><br>
+                <input type="radio" id="consulta" name="tema" value="Consulta general">
+                <label for="consulta">Consulta general</label>
+                <br>
+                <br>
+                <label>Detalles de su consulta: </label>
+                <br>
+                <textarea name="name" rows="5" cols="50"></textarea>
+                <br>
+                <br>
+                <label>Archivo: </label>
+                <input type="file" name="file">
+                <label>(Opcional)</label>
+                <br>
+                <br>
+                <br>
+                <input type="reset" name="reset" value="Limpiar formulario">
+                <input type="submit" name="submit" value="Enviar"><br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

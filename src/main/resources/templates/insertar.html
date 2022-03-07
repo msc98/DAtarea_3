@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>The Rumbling</title>
+        <meta charset="UTF-8">
+        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css"/>
+    <tittle>The Rumbling</tittle>
+</head>
+<body>
+    <header th:replace="layout/plantilla :: menu"></header>
+    <div id="backgroundIn">
+        <h2 id="tituloProd">Ingrese los datos del nuevo producto que desea agregar</h2>
+        <br>
+        <form th:action="@{/guardarProducto}"
+              method="post"
+              th:object="${producto}"
+              class="form">
+
+
+            <input type="hidden" name="ID_PRODUCTOS_ACESORIOS" th:field="*{ID_PRODUCTOS_ACESORIOS}">
+
+            <label for="NOMBRE">Nombre: </label><br>
+            <input type="text" name="NOMBRE" th:field="*{NOMBRE}"> 
+            <br>
+            <br>
+            <input type="radio" id="nuevo" name="ESTADO" value="Nuevo" th:field="*{ESTADO}">
+            <label for="nuevo">Nuevo</label>
+            <input type="radio" id="usado" name="ESTADO" value="Usado" th:field="*{ESTADO}">
+            <label for="usado">Usado</label>
+            <br>
+            <br>
+            <label for="DESCRIPCION">Descripción: </label><br>
+            <textarea name="DESCRIPCION" rows="3" cols="21" th:field="*{DESCRIPCION}"></textarea> 
+            <br>
+            <br>
+            <label for="PRECIO">Precio: </label><br>
+            <input type="text" name="PRECIO" th:field="*{PRECIO}"> 
+            <br>
+            <br>
+            <br>
+            <input type="submit" name="Guardar" value="Guardar" class="form-submit">
+        </form>
+    </div>
+</body>
+</html>
