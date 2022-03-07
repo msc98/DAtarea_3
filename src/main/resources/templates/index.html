@@ -13,31 +13,5 @@
         <h2>Bienvenidos a la tienda <span style="color:#0D735F"><u>The Rumbling!</u></span></h2>
         <h2>Acá encontrará todos los Electrónicos y Hardware que necesita!</h2>
         <img th:src="@{/images/icono.jpg}" alt=""/>
-        <br>  
-        <br>
-        <br>
-        <div th:if="${productosDB != null and !productosDB.empty}">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>ID PRODUCTO</th>
-                        <th>NOMBRE</th>
-                        <th>ESTADO</th>
-                        <th>DESCRIPCION</th>
-                        <th>PRECIO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="item : ${productosDB}">
-                        <td th:text="${item.ID_PRODUCTOS_ACESORIOS}"></td>
-                        <td th:text="${item.NOMBRE}"></td>
-                        <td th:text="${item.ESTADO}"></td>
-                        <td th:text="${item.DESCRIPCION}"></td>
-                        <td th:text="${item.PRECIO}"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div th:if="${productosDB == null or productosDB.empty}">No hay productos registrados</div>
 </body>
 </html>
